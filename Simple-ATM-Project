@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class AtmProgram {
+	
+	static double amount = 1000;
+	 
+	
+	public static void withdraw() {
+		double withdrawAmt;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the amount to be withdrawn");
+		 withdrawAmt = scan.nextInt();
+		amount=amount- withdrawAmt;
+
+	}
+
+	public static void deposit() {
+		double deposit;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the amount to be deposited");
+		deposit = scan.nextInt();
+		amount=amount+deposit;
+	}
+	public static void display() {
+		System.out.println(amount);
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int choice=1;
+		while(choice!=0) {
+		System.out.println("Choose one option");
+		System.out.println("1. display");
+		System.out.println("2. deposit");
+		System.out.println("3. display");
+		System.out.println("4. Exit");
+		choice= scan.nextInt();
+		
+		switch(choice) {
+		case 1: display();
+				break;
+		case 2: deposit();
+				break;
+		case 3: display();
+				break;
+		case 4: System.exit(0);
+		default: System.out.println("Invalid option");
+		}
+		
+				
+		}
+		
+	}
+
+}
